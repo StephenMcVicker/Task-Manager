@@ -9,4 +9,4 @@ A simple task manager that will save your tasks to local storage.
 Aside from entering a task, you will be able to edit current tasks, delete them one by one, or clear the task list (delete them all).
 Unlike my other projects, I didn't do much in terms of styling (I used Material UI and some inline styling). Again, my focus was on using a context provider for managing states/data.
 
-As usual, master branch is source code, GH-Pages is the optimised build for the app, link is at the top of the page :).
+As usual, master branch is source code, GH-Pages is the optimised build for the app, link to see it in action is at the top of the page :).
