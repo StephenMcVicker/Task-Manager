@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
+import "./App.css";
+import TaskList from "./components/TaskList";
+import TaskListContextProvider from "./context/TaskListContext";
+import TaskForm from "./components/TaskForm";
+import { red } from "@material-ui/core/colors";
 
 function App() {
+  const styleForDiv = {
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: "#FFECE6",
+    wdith: "400px",
+    height: "600px",
+    padding: "2rem",
+    marginTop: "1rem",
+    borderRadius: "10px",
+    overflowY: "auto",
+  };
+
+  const styleForForm = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: "2rem",
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TaskListContextProvider>
+      <Container maxWidth="sm">
+        <div style={styleForDiv}>
+          <h1 style={{ marginBottom: "2rem" }}>Task Manager</h1>
+          <TaskForm style={styleForForm} />
+          <TaskList />
+        </div>
+      </Container>
+    </TaskListContextProvider>
   );
 }
 
